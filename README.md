@@ -7,7 +7,7 @@
 
 
 ## Parte 1: Contador de 0 a 99 con Display 7 Segmentos y Multiplexación 
-![Tinkercad](./imagenes/imagenes/Parcial_SPD_Parte1.png)
+![](imagenes/Parcial_SPD_Parte1.png)
 
 
 ## Descripción
