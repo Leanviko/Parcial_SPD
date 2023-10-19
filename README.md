@@ -104,6 +104,7 @@ Primeramente se utilizó la función map() para establecer el rango pero como lo
 ## Motor de aficionado
 Este motor tiene una velocidad de giro bastante alta pero poca fuerza, por eso tiene integrado una serie de engranajes que permiten transformar esa velocidad en torque, de tal manera que pueda mover, por ejemplo, una rueda. Al estar conectado a dos pines de la placa Arduino se puede seleccionar mediante código el sentido de giro.
 Cuando el sensor de temperatura llegue a cierto valor. Se podría utilizar este motor para abrir una ventilación que ayude a bajar la temperatura o utilizar el pequeño motor sin los engranajes para hacer girar unas pequeñas aspas.
+
 ![](imagenes/motor_aficionado.jpg)
 
 ## :robot: Link al proyecto
