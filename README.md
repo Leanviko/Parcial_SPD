@@ -101,3 +101,29 @@ Primeramente se utilizó la función map() para establecer el rango pero como lo
 ```
 ## :robot: Link al proyecto
 - [Parte 2](https://www.tinkercad.com/things/bMhXdcsKlZr-parcial-domiciliario-spd-parte-2/editel?sharecode=QUtv5LL5CogbioIICBzB4xI_E0JsPRDQnt_gh3dl7Ds)
+
+## Parte 3: Fotodiodo con interruptor
+![](imagenes/Parcial_domiciliario_SPD_Parte_3.png)
+
+
+## Descripción
+En la parte final se añadió un fotodiodo al proyecto. Se buscó no eliminar ninguna de las funcionalidades agragadas hasta ahora, de modo que, aunque no fue solicitado se añadió un interruptor dezlizante para que el valor del fotodiodo se despliegue en los dos displays en lugar del contador.
+
+## Función principal del fotodiodo
+El fotodiodo es un semiconductor sensible a la luz visible o infrarroja. A medida que sea exitado por la luz se determinara la circulacion de corriente. Tiene conectado la negativo a la fuente y el positivo mediante una resistencia de 1k Ohm a GND debido a que tiene polaridad inversa. Del positivo tambien sale la conección hacia la entrada analogica.
+
+```cpp
+//Fotodiodo
+  int luz_anterior = luz;
+  luz = map(analogRead(FOTODIODO),1,21,0,99);
+```
+Luego mediante un IF constatamos que seleccionamos el modo "fotodiodo" y el valor es asignado a la variable contador para economizar codigo.
+```cpp
+if(interr_foto==1){
+  	contador = luz;
+    if(luz_anterior != luz){
+    		Serial.print("Luz: ");
+    		Serial.println(luz);
+    }
+  }
+```
