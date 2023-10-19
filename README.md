@@ -1,5 +1,5 @@
 # Parcial SPD 
-![Tinkercad](./imagenes/Parcial domiciliario SPD Parte 1.png)
+![Tinkercad](./imagenes/Parcial domiciliario_SPD_Parte1.png)
 
 
 ## Alumno 
