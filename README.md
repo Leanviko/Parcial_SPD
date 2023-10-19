@@ -127,3 +127,6 @@ if(interr_foto==1){
     }
   }
 ```
+
+## :robot: Link al proyecto
+- [Parte 3](https://www.tinkercad.com/things/7hlzh9JXNck-parcial-domiciliario-spd-parte-3/editel?sharecode=77mxBGioB1AEDH89ZRqShSS7STHmLXneo2EQxKgaaGM)
