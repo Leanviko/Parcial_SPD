@@ -138,3 +138,85 @@ if(interr_foto==1){
 
 ## :robot: Link al proyecto
 - [Parte 3](https://www.tinkercad.com/things/7hlzh9JXNck-parcial-domiciliario-spd-parte-3/editel?sharecode=77mxBGioB1AEDH89ZRqShSS7STHmLXneo2EQxKgaaGM)
+
+## Parte 4: contador numeros pares
+![](imagenes/Parcial_domiciliario_SPD_Parte_3.png)
+
+
+## Descripción
+Se modifica el proyecto haciendo que en lugar de numeros pares, los displays solo muestren los multiplos de 2.
+
+
+
+```cpp
+//Pulsadores 
+  	puls_suma = digitalRead(pulsador_suma);  //lectura digital de pin
+	puls_resta = digitalRead(pulsador_resta);
+  	puls_reset = digitalRead(pulsador_reset);
+  	int interr = digitalRead(interruptor_numeros);
+  	int interr_foto = digitalRead(interruptor_fotodiodo);
+ 
+  if(interr_foto==1){
+  	contador = luz;
+    if(luz_anterior != luz){
+    	Serial.print("Luz: ");
+    	Serial.println(luz);
+    }
+  }else{
+  	if (puls_suma && (millis()-tiempo > antirrebote)) {
+    contador++;
+    
+      if(contador > 99){
+          contador = 0;
+      }
+    
+    if( interr == 1){ 
+      //while (primo(contador)== false){
+      while(par(contador)==false){  
+      		contador++;
+        if(contador > 98){
+    		contador = 2;
+  		}
+      }
+  	}
+    
+    tiempo = millis();
+    
+  	Serial.println(contador);
+  }else if (puls_resta && (millis()-tiempo > antirrebote)) {
+    contador--;
+    
+    if(contador < 0){
+    	contador = 99;
+  	}
+    
+    if( interr == 1){ 
+      //while (primo(contador)== false){
+      while(par(contador)==false){  
+      		contador--;
+        if(contador < 2){
+    		contador = 98;
+  		}
+        
+      }
+  	}
+    
+    tiempo = millis();
+  	Serial.println(contador);	
+  }else if (puls_reset && (millis()-tiempo > antirrebote)) {
+    
+    contador = 0;
+    tiempo = millis();
+    Serial.println(contador);
+  }
+
+  
+  }
+  
+  
+  
+  alternarLeds(contador);
+```
+
+## :robot: Link al proyecto
+- [Parte 4](https://www.tinkercad.com/things/k6XxjPY0euE-parcial-domiciliario-spd-parte-4/editel?sharecode=C7YkLvTrBEVfSNg3C2T4we1TTyAAxMs_ZZ3Jhyksxf4)
