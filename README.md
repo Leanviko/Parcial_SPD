@@ -1,9 +1,11 @@
 # Parcial SPD 
-![Tinkercad](./imagenes/Parcial domiciliario_SPD_Parte1.png)
+![Tinkercad](./imagenes/portada.jpg)
 
 
 ## Alumno 
-- Leandro Gómez Antúnez 
+- Leandro Gómez Antúnez
+- Braian Catriel Gatto
+- Rocío Gómez
 
 
 ## Parte 1: Contador de 0 a 99 con Display 7 Segmentos y Multiplexación 
