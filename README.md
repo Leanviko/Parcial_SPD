@@ -79,6 +79,25 @@ bool primo( int n){
   return (true);
 }
 ```
+## Sensor de temperatura TPM
+El sensor de temperatura poseé un rango de medición de -40 grados centigrados a 125 grados centigrados. Los valores de medición solo se mostraran en el monitor si este cambia con respecto a la medicion anterior para no saturar con el mismo dato en loop.
+Primeramente se utilizó la función map() para establecer el rango pero como los valores a ingresar y el resultado de la medicion eran inexactos, se recurrió a realizar la conversión utilizando el voltaje y la medicion analogica. De este modo los resultados resultaron son más exactos.
+```cpp
+//--------------sensor de temperatura
+  int temp_anterior = temperatura;
+  //temperatura = map(analogRead(SENSOR_TEMPERATURA),0,1023,-50,450);
+  valor = analogRead(SENSOR_TEMPERATURA);
+  voltaje = ((valor * 5)/1024);
+  temperatura = ((voltaje-0.5)*100);
+  
 
+  
+  if(abs(temp_anterior - temperatura)> 0.5 ){
+    Serial.print("Temperatura: ");
+    Serial.print(temperatura);
+    Serial.println(" Grados");
+  }
+
+```
 ## :robot: Link al proyecto
 - [Parte 2](https://www.tinkercad.com/things/bMhXdcsKlZr-parcial-domiciliario-spd-parte-2/editel?sharecode=QUtv5LL5CogbioIICBzB4xI_E0JsPRDQnt_gh3dl7Ds)
