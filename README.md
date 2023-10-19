@@ -48,4 +48,37 @@ Esta parte del codigo se encarga de sumar, restar o resetear el contador dependi
 ```
 
 ## :robot: Link al proyecto
-- [proyecto](https://www.tinkercad.com/things/8Xpm7Flfr3n-parcial-domiciliario-spd-parte-1/editel?sharecode=JVViB7MPuhPJMNZZktFDwT3zRe2Ar468ZiNAzWNvGbU)
+- [Parte 1](https://www.tinkercad.com/things/8Xpm7Flfr3n-parcial-domiciliario-spd-parte-1/editel?sharecode=JVViB7MPuhPJMNZZktFDwT3zRe2Ar468ZiNAzWNvGbU)
+
+---
+
+## Parte 2: Modificación con Interruptor Deslizante y Números Primos 
+![](imagenes/Parcial_domiciliario_SPD_Parte_2.png)
+
+
+## Descripción
+Luego del contador se añadió un interruptor deslizante que permite seleccionar entre dos modos del contador. Hacia la derecha el contador funicionara de la misma manera que en funionaba en la primera parte, deslizando hacia la izquierda el contador solo mostrará los numeros que sean primos. Los 3 botones siguen con la función asignada en un principio.
+
+Luego fué agregado un sensor de temperatura que mostrará através del monitor la temperatura. La razón de no utilizar los displays es que el sensor mide hasta los 125 ºC por lo que era necesario un tercer display. 
+
+## Función primo()
+Esta funcion se encarga de determinar si el numero de contador es un numero primo. La funcion recibe el valor del contador como parametro. El valor entra en un bucle for que evaluea si existe otro valor por el que sea divisible aparte de si mismo, en ese caso retornará False. Como caso especial el valor 1 lo descarta como primo aunque cumpla las condiciones. Si se completa el bucle la función devuelve True confirmando que es un valor primo.
+
+
+```cpp
+bool primo( int n){
+  if (n==1){
+  	return(false);
+  }else{
+  	for ( int i = 2 ; i <n ; i++){
+      if (n % i == 0){ 
+        return(false);
+      }
+    }
+  }
+  return (true);
+}
+```
+
+## :robot: Link al proyecto
+- [Parte 2](https://www.tinkercad.com/things/bMhXdcsKlZr-parcial-domiciliario-spd-parte-2/editel?sharecode=QUtv5LL5CogbioIICBzB4xI_E0JsPRDQnt_gh3dl7Ds)
