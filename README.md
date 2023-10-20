@@ -94,7 +94,7 @@ Primeramente se utilizó la función map() para establecer el rango pero como lo
   
 
   
-  if(abs(temp_anterior - temperatura)> 0.5 ){
+  if(abs(temp_anterior - temperatura)> 1 ){
     Serial.print("Temperatura: ");
     Serial.print(temperatura);
     Serial.println(" Grados");
@@ -102,6 +102,8 @@ Primeramente se utilizó la función map() para establecer el rango pero como lo
 
 ```
 ## Motor de aficionado
+### Aclaracion: El motor en las partes 2 y 3 lo agregué pòsteriormente al parcial por que malinterpreté el enunciado, poseé la misma funcion que con el que fue presentado en la parte 4. Se activa cuando el sensor de temperatura detecta valores superiores a los 50 grados.
+
 Este motor tiene una velocidad de giro bastante alta pero poca fuerza, por eso tiene integrado una serie de engranajes que permiten transformar esa velocidad en torque, de tal manera que pueda mover, por ejemplo, una rueda. Al estar conectado a dos pines de la placa Arduino se puede seleccionar mediante código el sentido de giro.
 Cuando el sensor de temperatura llegue a cierto valor. Se podría utilizar este motor para abrir una ventilación que ayude a bajar la temperatura o utilizar el pequeño motor sin los engranajes para hacer girar unas pequeñas aspas.
 
